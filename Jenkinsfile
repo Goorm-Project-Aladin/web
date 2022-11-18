@@ -9,8 +9,6 @@ pipeline {
     stage('Docker build and push') {
       steps {
         sh '''
-        sudo yum update
-        sudo yum insatall docker.io
         docker build . -t 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
         docker push 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
         '''
