@@ -9,8 +9,7 @@ pipeline {
     stage('Docker build and push') {
       steps {
         sh '''
-        docker build . -t aladin
-        docker tag aladin:latest 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
+        docker build . -t aladin:latest 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
         docker push 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
         '''
       }
