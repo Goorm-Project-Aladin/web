@@ -9,8 +9,8 @@ pipeline {
     stage('Docker build and push') {
       steps {
         sh '''
-        docker build . -t 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
-        docker push 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
+        chmod 700 gradlew
+        ./gradlew build
         '''
       }
     }
