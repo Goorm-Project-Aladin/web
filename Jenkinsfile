@@ -9,7 +9,6 @@ pipeline {
     stage('Docker build and push') {
       steps {
         sh '''
-        aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com
         docker build -t . aladin
         docker tag aladin:latest 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
         docker push 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
