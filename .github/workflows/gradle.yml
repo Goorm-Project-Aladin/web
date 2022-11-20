@@ -40,7 +40,7 @@ jobs:
       with:
         aws-access-key-id: \${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: \${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: $AWS_REGION
+        aws-region: ap-northeast-2
         
     - name: Login to Amazon ECR
       id: login-ecr
@@ -60,7 +60,7 @@ jobs:
         ECR_REPOSITORY: demo-frontend
         IMAGE_TAG: \${{ steps.image.outputs.version }}
       run: |
-        echo "::set-output name=ecr_repository::\$ECR_REPOSITORY"
+        echo "::set-output name=ecr_repository::aladin"
         echo "::set-output name=image_tag::\$IMAGE_TAG"
-        docker build -t \$ECR_REGISTRY/\$ECR_REPOSITORY:\$IMAGE_TAG .
-        docker push \$ECR_REGISTRY/\$ECR_REPOSITORY:\$IMAGE_TAG
+        docker build . -t 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
+        docker push 535954374321.dkr.ecr.ap-northeast-2.amazonaws.com/aladin:latest
