@@ -12,5 +12,6 @@ RUN ./gradlew clean build
 FROM gcr.io/distroless/java:11
 LABEL description="Java Application run image"
 ARG JAR_FILE=/build/libs/web-0.0.1-SNAPSHOT.jar
+EXPOSE 60434
 COPY --from=builder web/${JAR_FILE} /app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
