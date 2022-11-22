@@ -6,7 +6,7 @@ spring:
     # private
     #    url: jdbc:mysql://book-db-mysql.c45lwe54ntds.ap-northeast-2.rds.amazonaws.com:3306/book?serverTimezone=Asia/Seoul
     username: admin
-    password: mysqladmin
+    password: ${{ secrets.RDS_PW }}
 
   jpa:
     show-sql: true
