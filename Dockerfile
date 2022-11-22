@@ -5,6 +5,7 @@ LABEL description="Java Application builder"
 RUN apt install git
 RUN git clone https://github.com/Goorm-Project-Aladin/web.git
 WORKDIR web
+RUN sed -i 's/^M//g' gradlew
 RUN chmod 700 gradlew
 RUN ./gradlew clean build
 
